@@ -1,8 +1,8 @@
 # DanielBortolussi
 
-Dashboard: Academic Conference App
+## Dashboard: Academic Conference App
 
-Widgets:
+### Widgets:
 
 1. View relevance to keyword by university
   - Order by KRC for all faculty, adjustable count, size of point = number of faculty
@@ -18,7 +18,7 @@ Widgets:
 6. Update faculty score
   - Search for id based on name, return all fields, update based on id
 
-Techniques:
+### Techniques:
 
 1. Index on keyword
 2. Constraint on adding publication
