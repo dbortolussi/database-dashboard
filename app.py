@@ -17,7 +17,7 @@ app.layout = html.Div([
               html.H2("Rank Universities by Keyword Relevance",style={'font-size':'1rem', 'margin':'0'}),
               dcc.Input(type="text", id='university-keyword', placeholder="Keyword"),
               html.Button("Submit", id='submit-university-keyword'),], style={'display':'flex', 'height':'5%', 'gap':'5px'}),
-              dcc.Graph(id='university-keyword-graph',style={'width': '100%', 'height': '95%', 'border-style':'solid'})
+              dcc.Graph(id='university-keyword-graph',style={'width': '100%', 'height': '95%', 'margin':'0'})
             ]),
             html.Div(className="panel", style={'display':'flex', 'flex-direction':'column', 'gap':'10px','padding':'0'}, children=[
               html.Div([
@@ -30,7 +30,8 @@ app.layout = html.Div([
                   'lineHeight': '15px'}, style_cell={
                   'overflow': 'hidden',
                   'textOverflow': 'ellipsis',
-                  'maxWidth': 0
+                  'maxWidth': 0}, style_table={
+                  'height': '20rem', 'overflowY': 'auto'
               })
             ]),
             html.Div("Panel 3", className="panel"),
@@ -50,6 +51,11 @@ def update_univ_graph(n, keyword):
   #Get data and put it in figure
   fig = px.scatter()
 
+  fig.update_layout(
+    margin=dict(l=20, r=20, t=20, b=20),
+    paper_bgcolor="LightSteelBlue",
+  )
+
   return fig
 
 
@@ -63,8 +69,8 @@ def update_facu_table(n, keyword):
 
   #Get data and put it in dataframe
 
-  dates = pd.date_range("20130101", periods=6)
-  df =  pd.DataFrame(np.random.randn(6, 4), index=dates, columns=list("ABCD"))
+  dates = pd.date_range("20130101", periods=20)
+  df =  pd.DataFrame(np.random.randn(20, 4), index=dates, columns=list("ABCD"))
 
   return df.to_dict('records')
 

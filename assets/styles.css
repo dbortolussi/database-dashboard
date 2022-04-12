@@ -25,12 +25,12 @@ h1 {
 	flex-wrap: wrap;
 	align-items: center;
 	justify-content: space-evenly;
-	gap: 1rem;
+	gap: 0.5rem;
 }
 
 .panel{
 	border-style: solid;
-	width: 34rem;
+	width: 34.5rem;
 	height: 22rem;
 	float: left;
 }
